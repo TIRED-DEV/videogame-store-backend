@@ -19,10 +19,13 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "jest": "^27.4.7",
-    "nodemon": "^2.0.15"
+    "node-fecth": "^0.0.1-security",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   },
   "config": {
     "commitizen": {

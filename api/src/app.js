@@ -8,6 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+import { router as gamesRoutes } from '../routes/games.routes.js';
+
+app.use('/api/games', gamesRoutes);
+
 const port = process.env.API_PORT;
 if (process.env.NODE_ENV != 'test') {
   app.listen(port, () => {

@@ -7,3 +7,6 @@ api/.env
 
 #database
 db/mysql/data
+
+#test
+api/coverage
