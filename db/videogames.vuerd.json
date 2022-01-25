@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -1,
-    "scrollLeft": -3,
+    "scrollTop": -133,
+    "scrollLeft": 0,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "",
-    "canvasType": "@vuerd/builtin-sql-ddl",
+    "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -120,7 +120,7 @@
           "active": false,
           "left": 23,
           "top": 367,
-          "zIndex": 58,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
@@ -205,7 +205,7 @@
           "active": false,
           "left": 529,
           "top": 450,
-          "zIndex": 120,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -265,9 +265,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1044,
-          "top": 192,
-          "zIndex": 122,
+          "left": 1059,
+          "top": 190,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60
         },
@@ -350,9 +350,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 528,
-          "top": 183,
-          "zIndex": 121,
+          "left": 538,
+          "top": 157,
+          "zIndex": 7,
           "widthName": 61.2490234375,
           "widthComment": 60
         },
@@ -402,8 +402,8 @@
           "columnIds": [
             "befeba79-28c0-4a4a-8fc3-cba44b75900b"
           ],
-          "x": 1044,
-          "y": 247,
+          "x": 1059,
+          "y": 245,
           "direction": "left"
         },
         "end": {
@@ -411,8 +411,8 @@
           "columnIds": [
             "0a7fb46b-847a-4b9d-8b60-019b89c229c0"
           ],
-          "x": 929.94873046875,
-          "y": 248.25,
+          "x": 939.94873046875,
+          "y": 222.25,
           "direction": "right"
         },
         "constraintName": "fk_games_to_salegame",
@@ -439,8 +439,8 @@
             "88e19e33-d452-4d3c-bd3a-c859999810ba",
             "6f2b4cf1-d52c-4e47-89b5-b9815ac294b1"
           ],
-          "x": 728.974365234375,
-          "y": 313.5,
+          "x": 738.974365234375,
+          "y": 287.5,
           "direction": "bottom"
         },
         "constraintName": "fk_sales_to_salegame",

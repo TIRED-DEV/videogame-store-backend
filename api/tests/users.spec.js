@@ -13,14 +13,14 @@ afterAll(() => {
   console.log('AFTER ALL test');
 });
 
-describe('Tests API REST games', () => {
-  test('get all', async () => {
+// !TODO - end test
+describe('Tests API REST users', () => {
+  test('get cart', async () => {
     await supertest(app)
-      .get('/api/games')
+      .get('/api/users/cart')
       .expect(200)
       .then((response) => {
-        const games = response.body;
-        expect(games.length).toBe(0);
+        console.log('hola');
       });
   });
 });

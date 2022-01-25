@@ -9,8 +9,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 import { router as gamesRoutes } from '../routes/games.routes.js';
+import { router as usersRoutes } from '../routes/users.routes.js';
 
 app.use('/api/games', gamesRoutes);
+app.use('/api/users', usersRoutes);
 
 const port = process.env.API_PORT;
 if (process.env.NODE_ENV != 'test') {
