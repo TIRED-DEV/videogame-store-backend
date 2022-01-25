@@ -1,0 +1,9 @@
+
+# dependencies
+api/node_modules
+
+#environment variables
+api/.env
+
+#database
+db/mysql/data

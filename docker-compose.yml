@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  db_mysql:
+    build: ./db/mysql
+    container_name: db_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gameshop
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/mysql/data:/var/lib/mysql
