@@ -8,16 +8,19 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-import { router as gamesRoutes } from '../routes/games.routes.js';
-import { router as usersRoutes } from '../routes/users.routes.js';
+import { router as gamesRoutes } from './routes/games.routes.js';
+import { router as cartsRoutes } from './routes/carts.routes.js';
+import { router as ordersRoutes } from './routes/orders.routes.js';
+import { router as usersRoutes } from './routes/users.routes.js';
 
 app.use('/api/games', gamesRoutes);
+app.use('/api/cart', cartsRoutes);
+app.use('/api/orders', ordersRoutes);
 app.use('/api/users', usersRoutes);
 
 const port = process.env.API_PORT;
 const server = app.listen(port, () => {
   if (process.env.NODE_ENV !== 'test') {
-    process.env.DB_DATABASE = 'gameshopTest';
     console.log('listening on port ' + port);
   }
 });

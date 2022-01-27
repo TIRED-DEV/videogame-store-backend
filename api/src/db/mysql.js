@@ -1,14 +1,12 @@
 import mysql from 'mysql';
 import dotenv from 'dotenv';
-
 dotenv.config();
 
-const host = process.env.DB_HOST;
-const port = process.env.DB_PORT;
-const user = process.env.DB_USER;
-const password = process.env.DB_PASSWORD;
-const database = process.env.DB_DATABASE;
-
+let host = process.env.DB_HOST;
+let port = process.env.DB_PORT;
+let user = process.env.DB_USER;
+let password = process.env.DB_PASSWORD;
+let database = process.env.DB_DATABASE;
 const connection = mysql.createConnection({
   host,
   port,
@@ -16,6 +14,8 @@ const connection = mysql.createConnection({
   password,
   database,
 });
+
+/* const database = process.env.DB_DATABASE; */
 
 /*
 connection.connect((err) => {
