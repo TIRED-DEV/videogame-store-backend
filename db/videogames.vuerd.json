@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "",
-    "canvasType": "@vuerd/builtin-sql-ddl",
+    "canvasType": "ERD",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -205,7 +205,7 @@
           "active": false,
           "left": 529,
           "top": 450,
-          "zIndex": 6,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -267,7 +267,7 @@
           "active": false,
           "left": 1059,
           "top": 190,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -352,7 +352,7 @@
           "active": false,
           "left": 538,
           "top": 157,
-          "zIndex": 11,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },
