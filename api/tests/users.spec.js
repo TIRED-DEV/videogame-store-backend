@@ -1,4 +1,4 @@
-import app from '../src/app.js';
+import app, { server } from '../src/app.js';
 import supertest from 'supertest';
 
 beforeAll(() => {
@@ -7,6 +7,7 @@ beforeAll(() => {
 
 beforeEach(() => {
   console.log('BEFORE EACH test');
+  server.close();
 });
 
 afterAll(() => {

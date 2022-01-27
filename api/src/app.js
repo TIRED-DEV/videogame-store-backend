@@ -15,10 +15,12 @@ app.use('/api/games', gamesRoutes);
 app.use('/api/users', usersRoutes);
 
 const port = process.env.API_PORT;
-if (process.env.NODE_ENV != 'test') {
-  app.listen(port, () => {
-    console.log(`Listening on port ${port}`);
-  });
-}
+const server = app.listen(port, () => {
+  if (process.env.NODE_ENV !== 'test') {
+    process.env.DB_DATABASE = 'gameshopTest';
+    console.log('listening on port ' + port);
+  }
+});
 
 export default app;
+export { server };

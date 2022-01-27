@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -128,7 +128,7 @@
         "id": "3baca4b7-3eb2-44bf-8f2f-0ece503f3d93"
       },
       {
-        "name": "sales",
+        "name": "cart",
         "comment": "",
         "columns": [
           {
@@ -205,7 +205,7 @@
           "active": false,
           "left": 529,
           "top": 450,
-          "zIndex": 2,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 60
         },
@@ -267,7 +267,7 @@
           "active": false,
           "left": 1059,
           "top": 190,
-          "zIndex": 6,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -275,7 +275,7 @@
         "id": "767b3fac-c722-43c9-8a28-5748c987281e"
       },
       {
-        "name": "saleGame",
+        "name": "cartGame",
         "comment": "",
         "columns": [
           {
@@ -352,8 +352,8 @@
           "active": false,
           "left": 538,
           "top": 157,
-          "zIndex": 7,
-          "widthName": 61.2490234375,
+          "zIndex": 11,
+          "widthName": 60,
           "widthComment": 60
         },
         "visible": true,

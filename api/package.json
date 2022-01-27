@@ -5,9 +5,9 @@
   "main": "src/app.js",
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development & nodemon app.js",
-    "start": "NODE_ENV=production & node app.js",
-    "test": "jest --coverage"
+    "dev": "NODE_ENV=development nodemon app.js",
+    "start": "NODE_ENV=production node src/app.js",
+    "test": "NODE_ENV=test jest --coverage --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
