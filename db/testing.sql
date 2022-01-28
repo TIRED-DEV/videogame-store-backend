@@ -2,7 +2,7 @@ INSERT INTO
   users
 VALUES
   ('user1@test.com', 'User1', '1234'),
-  ('user2@test.com''User2', '1234'),
+  ('user2@test.com', 'User2', '1234'),
   ('user3@test.com', 'User3', '1234');
 INSERT INTO
   games (title)
