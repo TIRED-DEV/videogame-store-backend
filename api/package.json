@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon app.js",
     "start": "NODE_ENV=production node src/app.js",
-    "test": "NODE_ENV=test jest --coverage --detectOpenHandles",
+    "test": "jest --coverage --detectOpenHandles",
     "dev-w": "SET NODE_ENV=development & nodemon app.js",
     "start-w": "SET NODE_ENV=production & node src/app.js",
     "test-w": "jest --coverage --detectOpenHandles"

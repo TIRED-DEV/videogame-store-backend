@@ -9,7 +9,6 @@ beforeAll(() => {
 
 beforeEach(() => {
   console.log('BEFORE EACH test');
-  console.log(process.env.DB_DATABASE);
   server.close();
 });
 

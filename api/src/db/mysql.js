@@ -6,24 +6,20 @@ let host = process.env.DB_HOST;
 let port = process.env.DB_PORT;
 let user = process.env.DB_USER;
 let password = process.env.DB_PASSWORD;
-let database = process.env.DB_DATABASE;
-const connection = mysql.createConnection({
+
+let connection = '';
+const connectionData = {
   host,
   port,
   user,
   password,
-  database,
-});
+};
+if (process.env.NODE_ENV !== 'test') {
+  connectionData.database = process.env.DB_DATABASE;
+} else {
+  connectionData.database = process.env.DB_DATABASE_TEST;
+}
+connection = mysql.createConnection(connectionData);
+console.log(connection);
 
-/* const database = process.env.DB_DATABASE; */
-
-/*
-connection.connect((err) => {
-  if (!err) {
-    console.log('error');
-  } else {
-    console.log('Database Connected');
-  }
-});
-*/
 export { connection };
