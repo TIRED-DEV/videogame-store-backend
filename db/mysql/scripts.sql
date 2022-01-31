@@ -3,14 +3,14 @@ GRANT ALL PRIVILEGES ON *.* TO 'admin' @'%';
 USE gameshop;
 CREATE TABLE cart (
   user VARCHAR(255) NOT NULL,
-  date DATETIME NOT NULL,
+  date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   sold BOOLEAN NULL,
   PRIMARY KEY (user, date)
 );
 CREATE TABLE cartGame (
   game INT NOT NULL,
   user VARCHAR(255) NOT NULL,
-  date DATETIME NOT NULL,
+  date TIMESTAMP NOT NULL,
   PRIMARY KEY (game, user, date)
 );
 CREATE TABLE games (
@@ -40,14 +40,14 @@ CREATE DATABASE gameshopTest;
 USE gameshopTest;
 CREATE TABLE cart (
     user VARCHAR(255) NOT NULL,
-    date DATETIME NOT NULL,
+    date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     sold BOOLEAN NULL,
     PRIMARY KEY (user, date)
   );
 CREATE TABLE cartGame (
     game INT NOT NULL,
     user VARCHAR(255) NOT NULL,
-    date DATETIME NOT NULL,
+    date TIMESTAMP NOT NULL,
     PRIMARY KEY (game, user, date)
   );
 CREATE TABLE games (

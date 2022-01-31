@@ -20,6 +20,5 @@ if (process.env.NODE_ENV !== 'test') {
   connectionData.database = process.env.DB_DATABASE_TEST;
 }
 connection = mysql.createConnection(connectionData);
-console.log(connection);
 
 export { connection };

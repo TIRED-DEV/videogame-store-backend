@@ -1,7 +1,6 @@
 import { connection } from '../db/mysql.js';
 
 const get = (req, res) => {
-  //@gabysanchez
   //!TODO: quitar cuando se pase el token @gabysanchez
   req.email = 'user1@test.com';
   const email = req.email;
