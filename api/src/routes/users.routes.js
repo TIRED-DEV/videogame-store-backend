@@ -2,8 +2,9 @@ import express from 'express';
 
 const router = express.Router();
 
-/* import * as ordersController from '../controllers/orders.controllers.js';
+import * as usersController from '../controllers/users.controllers.js';
 
-router.route('/').get(ordersController.getOrders); */
+router.route('/').post(usersController.login);
+router.route('/register').post(usersController.register);
 
 export { router };

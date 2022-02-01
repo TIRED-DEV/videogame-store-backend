@@ -3,7 +3,7 @@ import { connection } from '../db/mysql.js';
 const get = (req, res) => {
   //!TODO: quitar cuando se pase el token
   req.email = 'user1@test.com';
-  const email = req.email;
+  const email = req.user.email;
   const query = `SELECT * FROM cart WHERE cart.user = '${email}' AND sold = 0 LIMIT 1`;
   connection.query(query, (err, rows) => {
     console.log(err);
