@@ -16,7 +16,9 @@ beforeAll(() => {
 beforeEach(async () => {
   console.log('BEFORE EACH test');
   server.close();
-  await connection.query('Delete from users');
+  await connection.query('SET FOREIGN_KEY_CHECKS = 0');
+  await connection.query('TRUNCATE TABLE users');
+  await connection.query('SET FOREIGN_KEY_CHECKS = 1');
 });
 
 afterAll(async () => {

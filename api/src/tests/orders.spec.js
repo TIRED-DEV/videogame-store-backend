@@ -34,31 +34,20 @@ const userMock = {
   password: '1234',
 };
 
-describe('Tests API REST cart', () => {
-  test('create cart', async () => {
-    const query = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
-    await connection.query(query);
-    const token = createToken(userMock);
-    await supertest(app)
-      .post('/api/cart')
-      .auth(token, { type: 'bearer' })
-      .expect(200)
-      .then((response) => {
-        expect(response.text).toBe('Cart created');
-      });
-  });
-  test('get cart', async () => {
+describe('Tests API REST orders', () => {
+  test('get orders', async () => {
     const queryUser = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
-    const queryCart = `INSERT INTO cart (user, sold) VALUES ('${userMock.email}', 0)`;
+    const queryCart = `INSERT INTO cart (user, sold) VALUES ('${userMock.email}', 1)`;
     await connection.query(queryUser);
     await connection.query(queryCart);
     const token = createToken(userMock);
     await supertest(app)
-      .get('/api/cart')
+      .get('/api/orders')
       .auth(token, { type: 'bearer' })
       .expect(200)
       .then((response) => {
-        expect(response.text).toBe('empty cart!');
+        const cart = response.body;
+        expect(cart.length).toBe(1);
       });
   });
 });
