@@ -12,11 +12,13 @@ import { router as gamesRoutes } from './routes/games.routes.js';
 import { router as cartsRoutes } from './routes/carts.routes.js';
 import { router as ordersRoutes } from './routes/orders.routes.js';
 import { router as usersRoutes } from './routes/users.routes.js';
+import { router as stealRoutes } from './routes/steal.routes.js';
 
 app.use('/api/games', gamesRoutes);
 app.use('/api/cart', cartsRoutes);
 app.use('/api/orders', ordersRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/steal', stealRoutes);
 
 const port = process.env.API_PORT;
 const server = app.listen(port, () => {

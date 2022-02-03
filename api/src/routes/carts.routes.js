@@ -8,9 +8,9 @@ import * as cartsController from '../controllers/carts.controller.js';
 router
   .route('/')
   .get(ensureAuth, cartsController.get)
-  .post(ensureAuth, cartsController.create);
+  .post(ensureAuth, cartsController.create)
+  .delete(ensureAuth, cartsController.deleteGame);
 
 router.route('/add').post(ensureAuth, cartsController.addGame);
-router.route('/delete').delete(ensureAuth, cartsController.deleteGame);
 
 export { router };

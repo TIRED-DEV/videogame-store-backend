@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -234.66666666666686,
-    "scrollLeft": -123,
-    "zoomLevel": 1,
+    "scrollTop": -69,
+    "scrollLeft": -24,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -19,7 +19,7 @@
     },
     "database": "MySQL",
     "databaseName": "",
-    "canvasType": "ERD",
+    "canvasType": "@vuerd/builtin-sql-ddl",
     "language": "GraphQL",
     "tableCase": "pascalCase",
     "columnCase": "camelCase",
@@ -118,8 +118,8 @@
         ],
         "ui": {
           "active": false,
-          "left": 14,
-          "top": 359,
+          "left": 13,
+          "top": 368,
           "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
@@ -205,7 +205,7 @@
           "active": false,
           "left": 515,
           "top": 441,
-          "zIndex": 2,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },
@@ -242,7 +242,7 @@
           {
             "name": "title",
             "comment": "",
-            "dataType": "VARCHAR(40)",
+            "dataType": "VARCHAR(255)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -257,7 +257,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 60,
-              "widthDataType": 87.71875,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
             "id": "d79c17d7-0ea5-48cb-8fc9-06793784c4c4"
@@ -265,9 +265,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1078,
-          "top": 312,
-          "zIndex": 4,
+          "left": 1075,
+          "top": 166,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -350,8 +350,8 @@
         ],
         "ui": {
           "active": false,
-          "left": 558,
-          "top": 191,
+          "left": 538,
+          "top": 157,
           "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
@@ -376,8 +376,8 @@
           "columnIds": [
             "2be04ff3-f360-481e-9002-c41acce20a6b"
           ],
-          "x": 415.94873046875,
-          "y": 424.25,
+          "x": 414.94873046875,
+          "y": 433.25,
           "direction": "right"
         },
         "end": {
@@ -402,8 +402,8 @@
           "columnIds": [
             "befeba79-28c0-4a4a-8fc3-cba44b75900b"
           ],
-          "x": 1078,
-          "y": 367,
+          "x": 1075,
+          "y": 221,
           "direction": "left"
         },
         "end": {
@@ -411,8 +411,8 @@
           "columnIds": [
             "0a7fb46b-847a-4b9d-8b60-019b89c229c0"
           ],
-          "x": 959.94873046875,
-          "y": 256.25,
+          "x": 939.94873046875,
+          "y": 222.25,
           "direction": "right"
         },
         "constraintName": "fk_games_to_salegame",
@@ -439,8 +439,8 @@
             "88e19e33-d452-4d3c-bd3a-c859999810ba",
             "6f2b4cf1-d52c-4e47-89b5-b9815ac294b1"
           ],
-          "x": 758.974365234375,
-          "y": 321.5,
+          "x": 738.974365234375,
+          "y": 287.5,
           "direction": "bottom"
         },
         "constraintName": "fk_sales_to_salegame",

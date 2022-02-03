@@ -38,7 +38,7 @@ const get = (req, res) => {
   });
 };
 
-const confirmOrder = (req, res) => {
+const buy = (req, res) => {
   const email = req.user.email;
   const query = `UPDATE cart SET sold = true WHERE user = '${email}' AND sold = false`;
   connection.query(query, (err, rows) => {
@@ -54,4 +54,4 @@ const confirmOrder = (req, res) => {
   });
 };
 
-export { get, confirmOrder };
+export { get, buy };

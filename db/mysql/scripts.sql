@@ -15,7 +15,7 @@ CREATE TABLE cartGame (
 );
 CREATE TABLE games (
   id INT NOT NULL AUTO_INCREMENT,
-  title VARCHAR(40) NULL,
+  title VARCHAR(255) NULL,
   PRIMARY KEY (id)
 );
 CREATE TABLE users (
@@ -52,7 +52,7 @@ CREATE TABLE cartGame (
   );
 CREATE TABLE games (
     id INT NOT NULL AUTO_INCREMENT,
-    title VARCHAR(40) NULL,
+    title VARCHAR(255) NULL,
     PRIMARY KEY (id)
   );
 CREATE TABLE users (

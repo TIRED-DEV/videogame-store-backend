@@ -5,7 +5,9 @@ const router = express.Router();
 
 import * as ordersController from '../controllers/orders.controllers.js';
 
-router.route('/').get(ensureAuth, ordersController.get);
-router.route('/confirm').post(ensureAuth, ordersController.confirmOrder);
+router
+  .route('/')
+  .get(ensureAuth, ordersController.get)
+  .put(ensureAuth, ordersController.buy);
 
 export { router };
