@@ -25,7 +25,8 @@ afterAll(async () => {
 
 describe('Tests API REST games', () => {
   const query = `INSERT INTO games (title) VALUES ('test')`;
-  test('get all', async () => {
+
+  test('get all -- ok', async () => {
     await connection.query(query);
     await supertest(app)
       .get('/api/games')

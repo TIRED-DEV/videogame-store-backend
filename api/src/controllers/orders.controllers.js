@@ -38,4 +38,20 @@ const get = (req, res) => {
   });
 };
 
-export { get };
+const confirmOrder = (req, res) => {
+  const email = req.user.email;
+  const query = `UPDATE cart SET sold = true WHERE user = '${email}' AND sold = false`;
+  connection.query(query, (err, rows) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      if (rows.changedRows === 0) {
+        res.status(404).send('no orders!');
+      } else {
+        res.status(200).send('order confirmed!');
+      }
+    }
+  });
+};
+
+export { get, confirmOrder };

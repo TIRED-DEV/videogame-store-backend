@@ -35,7 +35,7 @@ const userMock = {
 };
 
 describe('Tests API REST cart', () => {
-  test('create cart', async () => {
+  test('create cart -- ok', async () => {
     const query = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
     await connection.query(query);
     const token = createToken(userMock);
@@ -47,7 +47,23 @@ describe('Tests API REST cart', () => {
         expect(response.text).toBe('Cart created');
       });
   });
-  test('get cart', async () => {
+
+  test('create cart -- already-exists', async () => {
+    const queryUser = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
+    const queryCart = `INSERT INTO cart (user, sold) VALUES ('${userMock.email}', 0)`;
+    await connection.query(queryUser);
+    await connection.query(queryCart);
+    const token = createToken(userMock);
+    await supertest(app)
+      .post('/api/cart')
+      .auth(token, { type: 'bearer' })
+      .expect(401)
+      .then((response) => {
+        expect(response.text).toBe('Cart already exists');
+      });
+  });
+
+  test('get cart -- ok', async () => {
     const queryUser = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
     const queryCart = `INSERT INTO cart (user, sold) VALUES ('${userMock.email}', 0)`;
     await connection.query(queryUser);
@@ -59,6 +75,19 @@ describe('Tests API REST cart', () => {
       .expect(200)
       .then((response) => {
         expect(response.text).toBe('empty cart!');
+      });
+  });
+
+  test('get cart -- not-have', async () => {
+    const queryUser = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
+    await connection.query(queryUser);
+    const token = createToken(userMock);
+    await supertest(app)
+      .get('/api/cart')
+      .auth(token, { type: 'bearer' })
+      .expect(200)
+      .then((response) => {
+        expect(response.text).toBe(`${userMock.email} doesn't have a cart`);
       });
   });
 });

@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -148.66666666666686,
-    "scrollLeft": -54,
+    "scrollTop": -234.66666666666686,
+    "scrollLeft": -123,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -205,7 +205,7 @@
           "active": false,
           "left": 515,
           "top": 441,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -265,13 +265,13 @@
         ],
         "ui": {
           "active": false,
-          "left": 1080,
-          "top": 202,
-          "zIndex": 2,
+          "left": 1078,
+          "top": 312,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60
         },
-        "visible": false,
+        "visible": true,
         "id": "767b3fac-c722-43c9-8a28-5748c987281e"
       },
       {
@@ -352,7 +352,7 @@
           "active": false,
           "left": 558,
           "top": 191,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60
         },
@@ -402,8 +402,8 @@
           "columnIds": [
             "befeba79-28c0-4a4a-8fc3-cba44b75900b"
           ],
-          "x": 1080,
-          "y": 257,
+          "x": 1078,
+          "y": 367,
           "direction": "left"
         },
         "end": {
@@ -416,7 +416,7 @@
           "direction": "right"
         },
         "constraintName": "fk_games_to_salegame",
-        "visible": false,
+        "visible": true,
         "id": "80256133-1735-453c-93ea-7753cda51230"
       },
       {

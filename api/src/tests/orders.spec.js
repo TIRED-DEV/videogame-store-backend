@@ -35,19 +35,35 @@ const userMock = {
 };
 
 describe('Tests API REST orders', () => {
-  test('get orders', async () => {
+  test('confirm order -- ok', async () => {
     const queryUser = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
-    const queryCart = `INSERT INTO cart (user, sold) VALUES ('${userMock.email}', 1)`;
+    const queryCart = `INSERT INTO cart (user, sold) VALUES ('${userMock.email}', 0)`;
     await connection.query(queryUser);
     await connection.query(queryCart);
     const token = createToken(userMock);
     await supertest(app)
-      .get('/api/orders')
+      .post('/api/orders/confirm')
       .auth(token, { type: 'bearer' })
       .expect(200)
       .then((response) => {
-        const cart = response.body;
-        expect(cart.length).toBe(1);
+        const cart = response.text;
+        console.log(cart);
+        expect(cart).toBe('order confirmed!');
+      });
+  });
+
+  test('confirm order -- no orders', async () => {
+    const queryUser = `INSERT INTO users (email, name, password) VALUES ('${userMock.email}', '${userMock.name}', '${userMock.password}')`;
+    await connection.query(queryUser);
+    const token = createToken(userMock);
+    await supertest(app)
+      .post('/api/orders/confirm')
+      .auth(token, { type: 'bearer' })
+      .expect(404)
+      .then((response) => {
+        const cart = response.text;
+        console.log(cart);
+        expect(cart).toBe('no orders!');
       });
   });
 });
