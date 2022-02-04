@@ -42,7 +42,7 @@ describe('Tests API REST orders', () => {
     await connection.query(queryCart);
     const token = createToken(userMock);
     await supertest(app)
-      .post('/api/orders/confirm')
+      .put('/api/orders')
       .auth(token, { type: 'bearer' })
       .expect(200)
       .then((response) => {
@@ -57,7 +57,7 @@ describe('Tests API REST orders', () => {
     await connection.query(queryUser);
     const token = createToken(userMock);
     await supertest(app)
-      .post('/api/orders/confirm')
+      .put('/api/orders')
       .auth(token, { type: 'bearer' })
       .expect(404)
       .then((response) => {
