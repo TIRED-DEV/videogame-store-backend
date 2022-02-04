@@ -1,6 +1,12 @@
 CREATE USER 'admin' @'%' IDENTIFIED WITH mysql_native_password BY 'admin';
 GRANT ALL PRIVILEGES ON *.* TO 'admin' @'%';
 USE gameshop;
+CREATE TABLE admins (
+  email VARCHAR(255) NOT NULL,
+  name VARCHAR(20) NULL,
+  password VARCHAR(255) NULL,
+  img VARCHAR(255) NULL
+);
 CREATE TABLE cart (
   user VARCHAR(255) NOT NULL,
   date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -21,7 +27,8 @@ CREATE TABLE games (
 CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   name VARCHAR(20) NULL,
-  password Varchar(255) NULL,
+  password VARCHAR(255) NULL,
+  img VARCHAR(255) NULL,
   PRIMARY KEY (email)
 );
 ALTER TABLE
@@ -36,8 +43,18 @@ ALTER TABLE
   cartGame
 ADD
   CONSTRAINT FK_cart_TO_cartGame FOREIGN KEY (user, date) REFERENCES cart (user, date);
+ALTER TABLE
+  admins
+ADD
+  CONSTRAINT FK_users_TO_admins FOREIGN KEY (email) REFERENCES users (email);
 CREATE DATABASE gameshopTest;
 USE gameshopTest;
+CREATE TABLE admins (
+    email VARCHAR(255) NOT NULL,
+    name VARCHAR(20) NULL,
+    password VARCHAR(255) NULL,
+    img VARCHAR(255) NULL
+  );
 CREATE TABLE cart (
     user VARCHAR(255) NOT NULL,
     date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -58,7 +75,8 @@ CREATE TABLE games (
 CREATE TABLE users (
     email VARCHAR(255) NOT NULL,
     name VARCHAR(20) NULL,
-    password Varchar(255) NULL,
+    password VARCHAR(255) NULL,
+    img VARCHAR(255) NULL,
     PRIMARY KEY (email)
   );
 ALTER TABLE
@@ -73,3 +91,7 @@ ALTER TABLE
   cartGame
 ADD
   CONSTRAINT FK_cart_TO_cartGame FOREIGN KEY (user, date) REFERENCES cart (user, date);
+ALTER TABLE
+  admins
+ADD
+  CONSTRAINT FK_users_TO_admins FOREIGN KEY (email) REFERENCES users (email);

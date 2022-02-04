@@ -18,6 +18,7 @@ const ensureAuth = (req, res, next) => {
           return res.status(401).send(err);
         } else {
           req.user = { name: decoded.name, email: decoded.email };
+
           next();
         }
       });

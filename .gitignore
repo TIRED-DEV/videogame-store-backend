@@ -1,6 +1,8 @@
-
 # dependencies
 api/node_modules
+
+# uploads
+api/uploads
 
 #environment variables
 api/.env
