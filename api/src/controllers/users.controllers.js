@@ -41,5 +41,59 @@ const login = (req, res) => {
     }
   );
 };
+const update = (req, res) => {
+  const { name, image } = req.body;
+  const email = req.user.email;
+  connection.query(
+    `UPDATE users
+      SET name="${name}", img="${image}"
+      WHERE email = "${email}";`,
+    (err, rows) => {
+      if (err) {
+        res.status(500).send(err);
+      } else res.status(200).send('update');
+    }
+  );
+};
+const get = (req, res) => {
+  const email = req.user.email;
+  connection.query(
+    `SELECT * FROM users
+     WHERE email = "${email}";`,
+    (err, rows) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        const user = {
+          name: rows[0].name,
+          image: rows[0].img,
+        };
+        res.status(200).send(user);
+      }
+    }
+  );
+};
+const search = (req, res) => {
+  const name = req.params.name;
+  connection.query(
+    `SELECT * FROM users
+    WHERE name LIKE "%${name}%";`,
+    (err, rows) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        let users = [];
+        rows.forEach((row) => {
+          let user = {
+            name: row.name,
+            image: row.img,
+          };
+          users.push(user);
+        });
+        res.status(200).send(users);
+      }
+    }
+  );
+};
 
-export { register, login };
+export { register, login, update, get, search };

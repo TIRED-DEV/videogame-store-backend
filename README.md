@@ -24,18 +24,23 @@ _Command:_ `$ npm run dev `
 
 ## API 📍
 
-| Endpoint              | HTTP   | Description                     |
-| --------------------- | ------ | ------------------------------- |
-| `/api/users`          | POST   | Signin an user                  |
-| `/api/users/register` | POST   | Signup an user                  |
-| `/api/games`          | GET    | Obtain all games                |
-| `/api/cart`           | GET    | Obtain an user's cart           |
-| `/api/cart`           | POST   | Create a new user's cart        |
-| `/api/cart`           | DELETE | Remove a game from the cart     |
-| `/api/cart/add`       | POST   | Add a game in the cart          |
-| `/api/orders`         | GET    | Obtain all sales from user      |
-| `/api/orders`         | PUT    | Update cart status to purchased |
-| `/api/steal`          | GET    | Stealing the other team's games |
+| Endpoint                  | HTTP   | Description                     |
+| ------------------------- | ------ | ------------------------------- |
+| `/api/users`              | GET    | Obtain user data                |
+| `/api/users`              | PUT    | Update user data                |
+| `/api/users`              | POST   | Signin an user                  |
+| `/api/users/register`     | POST   | Signup an user                  |
+| `/api/users/search/:name` | GET    | Search for a user by name       |
+| `/api/games`              | GET    | Obtain all games                |
+| `/api/cart`               | GET    | Obtain an user's cart           |
+| `/api/cart`               | POST   | Create a new user's cart        |
+| `/api/cart`               | DELETE | Remove a game from the cart     |
+| `/api/cart/add`           | POST   | Add a game in the cart          |
+| `/api/orders`             | GET    | Obtain all sales from user      |
+| `/api/orders`             | PUT    | Update cart status to purchased |
+| `/api/files`              | GET    | Download user profile image     |
+| `/api/files`              | POST   | Upload user profile image       |
+| `/api/steal`              | GET    | Stealing the other team's games |
 
 ## Built with 🛠️
 
