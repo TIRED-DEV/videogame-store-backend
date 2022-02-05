@@ -6,6 +6,6 @@ const router = express.Router();
 import * as filesController from '../controllers/files.controllers.js';
 
 router.route('/').post(ensureAuth, filesController.upload);
-router.route('/:file').get(ensureAuth, filesController.get);
+router.route('/:file').get(filesController.get);
 
 export { router };

@@ -6,12 +6,11 @@ import { createToken } from '../middleware/token.middleware.js';
 
 dotenv.config();
 
-beforeAll(() => {
+/* beforeAll(() => {
   console.log('BEFORE ALL TEST');
 });
-
+ */
 beforeEach(async () => {
-  console.log('BEFORE EACH test');
   server.close();
   await connection.query('SET FOREIGN_KEY_CHECKS = 0');
   await connection.query('TRUNCATE TABLE users');
@@ -20,7 +19,6 @@ beforeEach(async () => {
 });
 
 afterAll(async () => {
-  console.log('AFTER ALL test');
   server.close();
   await connection.query('SET FOREIGN_KEY_CHECKS = 0');
   await connection.query('TRUNCATE TABLE users');
@@ -47,7 +45,6 @@ describe('Tests API REST orders', () => {
       .expect(200)
       .then((response) => {
         const cart = response.text;
-        console.log(cart);
         expect(cart).toBe('order confirmed!');
       });
   });
@@ -62,7 +59,6 @@ describe('Tests API REST orders', () => {
       .expect(404)
       .then((response) => {
         const cart = response.text;
-        console.log(cart);
         expect(cart).toBe('no orders!');
       });
   });

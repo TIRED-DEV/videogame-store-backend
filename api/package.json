@@ -9,8 +9,7 @@
     "start": "NODE_ENV=production node src/app.js",
     "test": "jest --coverage --detectOpenHandles",
     "dev-w": "SET NODE_ENV=development & nodemon app.js",
-    "start-w": "SET NODE_ENV=production & node src/app.js",
-    "test-w": "jest --coverage --detectOpenHandles"
+    "start-w": "SET NODE_ENV=production & node src/app.js"
   },
   "author": "",
   "license": "ISC",
