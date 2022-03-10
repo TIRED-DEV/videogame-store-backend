@@ -11,7 +11,7 @@ const register = (req, res) => {
     `insert into users (email,name, password) values ("${email}","${name}","${passwordHash}");`,
     (err, rows) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(500).send({ error: 'User already exists' });
       } else res.send({ email });
     }
   );
@@ -24,7 +24,7 @@ const login = (req, res) => {
       if (err) {
         res.status(500).send(err);
       } else if (rows.length == 0) {
-        res.status(404).send(`User/password does not exist`);
+        res.status(404).send({ error: 'User/password does not exist' });
       } else {
         const user = rows[0];
         const verified = bcrypt.compareSync(password, user.password);
@@ -35,7 +35,7 @@ const login = (req, res) => {
             token,
           });
         } else {
-          res.status(404).send(`User/password does not exist`);
+          res.status(404).send({ error: 'User/password does not exist' });
         }
       }
     }

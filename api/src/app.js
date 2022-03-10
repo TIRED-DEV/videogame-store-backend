@@ -1,12 +1,19 @@
 import express from 'express';
 import swaggerUI from 'swagger-ui-express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 dotenv.config();
+
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+};
 
 //express config
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
 
 import { router as gamesRoutes } from './routes/games.routes.js';
 import { router as cartsRoutes } from './routes/carts.routes.js';
