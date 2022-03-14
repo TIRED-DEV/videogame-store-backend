@@ -11,6 +11,7 @@ CREATE TABLE cart (
   user VARCHAR(255) NOT NULL,
   date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   sold BOOLEAN NULL,
+  total DECIMAL(4, 2) NULL,
   PRIMARY KEY (user, date)
 );
 CREATE TABLE cartGame (
@@ -22,6 +23,9 @@ CREATE TABLE cartGame (
 CREATE TABLE games (
   id INT NOT NULL AUTO_INCREMENT,
   title VARCHAR(255) NULL,
+  img VARCHAR(255) NULL,
+  descr VARCHAR(255) NULL,
+  price DECIMAL(4, 2) NULL,
   PRIMARY KEY (id)
 );
 CREATE TABLE users (
@@ -59,6 +63,7 @@ CREATE TABLE cart (
     user VARCHAR(255) NOT NULL,
     date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     sold BOOLEAN NULL,
+    total DECIMAL(4, 2) NULL,
     PRIMARY KEY (user, date)
   );
 CREATE TABLE cartGame (
@@ -70,6 +75,9 @@ CREATE TABLE cartGame (
 CREATE TABLE games (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(255) NULL,
+    img VARCHAR(255) NULL,
+    descr VARCHAR(255) NULL,
+    price DECIMAL(4, 2) NULL,
     PRIMARY KEY (id)
   );
 CREATE TABLE users (

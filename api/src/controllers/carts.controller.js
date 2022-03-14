@@ -23,7 +23,7 @@ const get = (req, res) => {
         } else {
           let data;
           if (rows2.length === 0) {
-            data = `${email} doesn't have a cart`;
+            data = `doesn't have a cart`;
           } else if (rows.length === 0) {
             data = 'empty cart!';
           } else {
