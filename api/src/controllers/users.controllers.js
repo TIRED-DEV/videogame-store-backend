@@ -62,13 +62,13 @@ const get = (req, res) => {
      WHERE email = "${email}";`,
     (err, rows) => {
       if (err) {
-        res.status(500).send(err);
+        res.status(500).send({ err });
       } else {
         const user = {
           name: rows[0].name,
           image: rows[0].img,
         };
-        res.status(200).send(user);
+        res.status(200).send({ user });
       }
     }
   );
